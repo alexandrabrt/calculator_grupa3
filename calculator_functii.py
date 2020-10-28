@@ -29,14 +29,17 @@ def inmultire(x: float, y: float) -> float:
     return x * y
 
 
-def impartire(x: float, y: float) -> float:
+def impartire(x: float, y: float) -> str:
     """
 
     :param x: primul numar introdus de la tastatura
     :param y: al doilea numar introdus de la tastatura
     :return: rezulatul impartii celor doua numere
     """
-    return x / y
+    if y == 0:
+        return "Nu stiu deastea."
+    elif y != 0:
+        return f"{x / y}"
 
 
 def calculator(primul_input: float, al_doilea_input: str, al_treilea_input: float) -> str:
@@ -80,13 +83,8 @@ def main():
         primul_input = float(input("Alegeti un numar: "))
         al_doilea_input = input("Alegeti semnul matematic: ")
         al_treilea_input = float(input("Alegeti un numar: "))
-        if al_treilea_input == 0 and al_doilea_input == "/":
-            print("Nu stiu deastea.")
-        else:
-            print(calculator(primul_input, al_doilea_input, al_treilea_input))
-            reincercare = recalculare()
+        print(calculator(primul_input, al_doilea_input, al_treilea_input))
+        reincercare = recalculare()
 
 
 main()
-
-
